@@ -1,0 +1,9 @@
+# Optional: run Composer / PHP when you do not have them installed locally.
+# Example: docker compose run --rm composer install -d packages/laravel-response-trace
+services:
+  composer:
+    image: composer:2
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - .:/app
+    working_dir: /app
